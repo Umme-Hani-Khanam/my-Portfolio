@@ -19,9 +19,9 @@ export default function Experience() {
 
       <div style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "30px" }}>
         <div style={{ marginBottom: "50px" }}>
-          <h3>AI Content Creation Intern</h3>
+          <h3>AI Content Creation Department Manager Intern</h3>
           <p style={{ color: "var(--text-muted)" }}>
-            Jan 2026 – Present · Hadi & Taimur (Remote)
+            Jan 2026 - Feb 2026 · Hadi & Taimur (Remote)
           </p>
 
           <ul style={{ marginTop: "15px" }}>

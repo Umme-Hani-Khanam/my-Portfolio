@@ -128,96 +128,106 @@ position: "relative",
         </a>
       </div>
 
-      {/* ================= MINI RESTAURANT ================= */}
-      <div style={cardStyle}>
-        <h3
-          style={{
-            fontSize: "1.6rem",
-            color: "var(--accent)",
-            marginBottom: "20px",
-          }}
-        >
-          Mini Restaurant Management
-        </h3>
+     {/* ================= Home Renovation Tracker ================= */}
+<div style={cardStyle}>
+  <h3
+    style={{
+      fontSize: "1.6rem",
+      color: "var(--accent)",
+      marginBottom: "20px",
+    }}
+  >
+    Home Renovation Tracker
+  </h3>
 
-        <p style={{ marginBottom: "12px" }}>
-          <span style={{ fontWeight: 600, color: "#fff" }}>Problem:</span>{" "}
-          Users need a simple way to browse restaurant listings, while admins
-          require controlled access.
-        </p>
+  <p style={{ marginBottom: "12px" }}>
+    <span style={{ fontWeight: 600, color: "#fff" }}>Problem:</span>{" "}
+    Home renovation projects involve managing tasks, expenses, materials,
+    shopping, and permits. Without a centralized system, projects become
+    disorganized, budgets are difficult to control, and important activities
+    may be missed.
+  </p>
 
-        <p style={{ marginBottom: "25px" }}>
-          <span style={{ fontWeight: 600, color: "var(--accent)" }}>
-            Solution:
-          </span>{" "}
-          Built a role-based React application with LocalStorage persistence
-          for restaurant management.
-        </p>
+  <p style={{ marginBottom: "25px" }}>
+    <span style={{ fontWeight: 600, color: "var(--accent)" }}>
+      Solution:
+    </span>{" "}
+    Developed a full-stack Home Renovation Tracker that centralizes project
+    management with task, expense, inventory, shopping, and permit tracking.
+    Integrated Gemini AI to generate renovation inspiration and estimate
+    required materials, supported by a dashboard for monitoring project
+    progress and resources.
+  </p>
 
-        <div style={divider} />
+  <div style={divider} />
 
-        <h4
-          style={{
-            marginBottom: "15px",
-            color: "var(--accent)",
-            fontWeight: 600,
-          }}
-        >
-          Core Features
-        </h4>
+  <h4
+    style={{
+      marginBottom: "15px",
+      color: "var(--accent)",
+      fontWeight: 600,
+    }}
+  >
+    Core Features
+  </h4>
 
-        <ul style={{ marginBottom: "25px", lineHeight: "1.9" }}>
-          <li>User browsing interface</li>
-          <li>Admin add restaurant functionality</li>
-          <li>Role-based access control</li>
-          <li>LocalStorage persistence</li>
-        </ul>
+  <ul style={{ marginBottom: "25px", lineHeight: "1.9" }}>
+    <li>Task and renovation progress tracking</li>
+    <li>Expense management and budgeting</li>
+    <li>Inventory and shopping list management</li>
+    <li>AI-powered renovation inspiration</li>
+    <li>AI-based material estimation</li>
+    <li>Permit tracking for approvals</li>
+    <li>Project dashboard overview</li>
+  </ul>
 
-        <h4
-          style={{
-            marginBottom: "15px",
-            color: "var(--accent)",
-            fontWeight: 600,
-          }}
-        >
-          My Responsibilities
-        </h4>
+  <h4
+    style={{
+      marginBottom: "15px",
+      color: "var(--accent)",
+      fontWeight: 600,
+    }}
+  >
+    My Responsibilities
+  </h4>
 
-        <ul style={{ marginBottom: "25px", lineHeight: "1.9" }}>
-          <li>Designed role-based architecture</li>
-          <li>Implemented LocalStorage persistence</li>
-          <li>Built React Router navigation</li>
-          <li>Created reusable component structure</li>
-        </ul>
+  <ul style={{ marginBottom: "25px", lineHeight: "1.9" }}>
+    <li>Designed full-stack architecture and REST APIs</li>
+    <li>Integrated Gemini AI for inspiration and material estimation</li>
+    <li>Built responsive React UI and dashboard</li>
+    <li>Implemented backend logic for project, task, and expense management</li>
+  </ul>
 
-        <p
-          style={{
-            color: "var(--accent)",
-            marginBottom: "25px",
-            fontWeight: 500,
-          }}
-        >
-          React · React Router · LocalStorage
-        </p>
+  <p
+    style={{
+      color: "var(--accent)",
+      marginBottom: "25px",
+      fontWeight: 500,
+    }}
+  >
+    React · Node.js · Express.js · REST APIs · Gemini AI · MySQL/Supabase
+  </p>
 
-        <div style={{ display: "flex", gap: "15px" }}>
-          <a
-            href="https://minirestaurantmanagement.netlify.app/"
-            target="_blank"
-            className="btn-primary"
-          >
-            Live Demo
-          </a>
+  <div style={{ display: "flex", gap: "15px" }}>
+    <a
+      href="https://homerenovationtracker.netlify.app/"
+      target="_blank"
+      className="btn-primary"
+    >
+      Live Demo
+    </a>
 
-          <a
-            href="https://github.com/Umme-Hani-Khanam/Mini_Restaurant_Management"
-            target="_blank"
-            className="btn-outline"
-          >
-            GitHub
-          </a>
-        </div>
-      </div>
+    <a
+      href="https://github.com/Umme-Hani-Khanam/home-renovation-frontend"
+      target="_blank"
+      className="btn-outline"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
+
+      
     </section>
   );
 }
