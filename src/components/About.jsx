@@ -10,6 +10,7 @@ export default function About() {
       <div
         style={{
           maxWidth: "820px",
+          margin: "0 auto",
           fontSize: "1.15rem",
           lineHeight: "1.9",
         }}
@@ -19,28 +20,26 @@ export default function About() {
           <span style={{ color: "var(--accent)", fontWeight: 600 }}>
             Full Stack Developer
           </span>{" "}
-          focused on designing{" "}
+          who builds scalable web applications using{" "}
           <span style={{ color: "#fff", fontWeight: 500 }}>
-            scalable backend architectures
-          </span>{" "}
-          and clean, intentional interfaces.
+            React, Node.js, and REST APIs
+          </span>
+          . I enjoy transforming complex ideas into structured,
+          maintainable digital products.
         </p>
 
         <p style={{ marginBottom: "22px", color: "var(--text-secondary)" }}>
-          I translate complex real-world problems into structured,
-          production-ready digital systems with thoughtful architecture.
+          My work focuses on building practical systems such as AI-integrated
+          productivity tools and management platforms, combining clean backend
+          architecture with intuitive user interfaces.
         </p>
 
         <p style={{ color: "var(--text-secondary)" }}>
-          My approach blends engineering clarity, performance optimization,
-          and user-centered design to deliver systems that are both{" "}
+          I prioritize{" "}
           <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-            reliable
+            performance, scalability, and clear system design
           </span>{" "}
-          and{" "}
-          <span style={{ color: "var(--accent)", fontWeight: 500 }}>
-            refined.
-          </span>
+          while ensuring that the user experience remains simple and efficient.
         </p>
       </div>
     </section>
