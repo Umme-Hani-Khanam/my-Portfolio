@@ -10,12 +10,10 @@ import BackToTop from "./components/BackToTop";
 
 export default function App() {
   return (
-    <div className="relative overflow-hidden bg-[#fbf5fa] text-[#2d1d3a]">
-      <div className="pointer-events-none absolute left-[-10%] top-0 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#f7e2f1]/80 via-transparent to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-20 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#d9c2e9]/70 via-transparent to-transparent blur-3xl" />
+    <div className="app-shell relative min-h-screen overflow-x-hidden bg-[var(--bg)] text-[var(--text-primary)]">
       <ScrollProgress />
       <Navbar />
-      <main className="relative mx-auto flex min-h-screen max-w-[1440px] flex-col">
+      <main className="relative mx-auto max-w-[1240px] px-4 pb-24 pt-4 sm:px-6 lg:px-8">
         <Hero />
         <About />
         <Skills />
@@ -24,6 +22,8 @@ export default function App() {
         <Contact />
       </main>
       <BackToTop />
+      <div className="pointer-events-none absolute left-[-6rem] top-0 h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle_at_top_left,_rgba(233,166,216,0.24),_transparent_30%)] blur-3xl" />
+      <div className="pointer-events-none absolute right-0 bottom-20 h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle_at_bottom_right,_rgba(198,156,219,0.24),_transparent_30%)] blur-3xl" />
     </div>
   );
 }

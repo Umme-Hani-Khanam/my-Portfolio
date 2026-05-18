@@ -1,82 +1,80 @@
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import useReveal from "../hooks/useReveal";
+
+const roles = [
+  {
+    title: "AI Content Creation Department Manager Intern",
+    period: "Jan 2026 - Feb 2026",
+    company: "Hadi & Taimur",
+    mode: "Remote",
+    points: [
+      "Built a React dashboard for prompt configuration, content staging, and approval workflows.",
+      "Implemented a data pipeline to centralize model outputs, reducing manual handoff velocity by 60%.",
+      "Added event-level logging and success metrics to improve editorial iteration around campaign performance.",
+    ],
+  },
+  {
+    title: "Graphic Designer",
+    period: "Jan 2023 - Jan 2026",
+    company: "Girls Islamic Organization",
+    mode: "Remote",
+    points: [
+      "Designed a reusable visual system for campaigns, social media, and fundraising assets.",
+      "Created templates and brand guidelines to speed up production with consistent typography and layout.",
+      "Partnered with engineering and content teams to align delivery cadence, accessibility, and launch readiness.",
+    ],
+  },
+];
 
 export default function Experience() {
   useReveal();
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setCount(i++);
-      if (i > 70) clearInterval(interval);
-    }, 25);
-  }, []);
-
-  const container = {
-    maxWidth: "900px",
-    margin: "0 auto",
-    padding: "60px 20px",
-  };
-
-  const timeline = {
-    borderLeft: "3px solid var(--accent)",
-    paddingLeft: "25px",
-  };
-
-  const card = {
-    background: "rgba(255,255,255,0.03)",
-    padding: "20px",
-    borderRadius: "10px",
-    marginBottom: "30px",
-  };
 
   return (
-    <section className="reveal" id="Experience" style={container}>
-      <h2 style={{ marginBottom: "40px", textAlign: "center" }}>
-        Professional Journey
-      </h2>
-
-      <div style={timeline}>
-        <div style={card}>
-          <h3>AI Content Creation Department Manager Intern</h3>
-
-          <p style={{ color: "var(--text-muted)", marginBottom: "10px" }}>
-            Jan 2026 – Feb 2026 · Hadi & Taimur (Remote)
+    <section id="experience" className="section reveal px-4 py-16 sm:px-6 sm:py-20">
+      <div className="space-y-8">
+        <div className="max-w-2xl space-y-3">
+          <p className="inline-flex rounded-full border border-(--border) bg-(--surface-soft) px-4 py-2 text-xs uppercase tracking-[0.28em] text-(--accent)">
+            Experience
           </p>
-
-          <ul>
-            <li>Developed AI-assisted campaign scripts for IPO Genie</li>
-            <li>Collaborated with cross-functional teams</li>
-            <li>Optimized content using trend analysis</li>
-          </ul>
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-(--text-primary) sm:text-4xl">
+            Engineering experience that combines product delivery with team collaboration.
+          </h2>
+          <p className="max-w-xl text-base leading-7 text-(--text-secondary)">
+            My roles focus on building systems, managing workstreams, and delivering product improvements with technical accountability.
+          </p>
         </div>
 
-        <div style={card}>
-          <h3>Graphic Designer</h3>
-
-          <p style={{ color: "var(--text-muted)", marginBottom: "10px" }}>
-            Jan 2023 – Jan 2026 · Girls Islamic Organization (Remote)
-          </p>
-
-          <ul>
-            <li>Designed posters, banners, social media creatives and event assets</li>
-
-            <li>
-              Led visual promotion that increased event participation by{" "}
-              <span
-                style={{
-                  color: "var(--accent)",
-                  fontWeight: 700,
-                }}
-              >
-                {count}+
-              </span>{" "}
-              attendees
-            </li>
-
-            <li>Maintained brand consistency across campaigns</li>
-          </ul>
+        <div className="grid gap-6 xl:grid-cols-2">
+          {roles.map((role) => (
+            <motion.article
+              key={role.title}
+              className="group flex min-h-80 flex-col justify-between overflow-hidden rounded-4xl border border-surface bg-surface p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-(--accent) hover:bg-(--surface-soft)"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <div className="space-y-6">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="rounded-full bg-(--surface-soft) px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-(--accent)">
+                    {role.mode}
+                  </span>
+                  <div className="text-right text-sm text-(--text-muted)">
+                    <p className="font-semibold text-(--text-primary)">{role.company}</p>
+                    <p>{role.period}</p>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-semibold text-(--text-primary)">{role.title}</h3>
+                <ul className="grid gap-3 text-sm leading-7 text-(--text-secondary)">
+                  {role.points.map((point) => (
+                    <li key={point} className="rounded-3xl bg-(--surface-strong) p-4">
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

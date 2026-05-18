@@ -1,30 +1,25 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function BackToTop(){
-  const [show,setShow]=useState(false);
+export default function BackToTop() {
+  const [show, setShow] = useState(false);
 
-  useEffect(()=>{
-    window.addEventListener("scroll",()=>{
-      setShow(window.scrollY>400);
-    });
-  },[]);
+  useEffect(() => {
+    const handleScroll = () => setShow(window.scrollY > 420);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  if(!show) return null;
+  if (!show) return null;
 
-  return(
+  return (
     <button
-      onClick={()=>window.scrollTo({top:0,behavior:"smooth"})}
-      style={{
-        position:"fixed",
-        bottom:"30px",
-        right:"30px",
-        background:"var(--gradient)",
-        border:"none",
-        padding:"12px 16px",
-        borderRadius:"50%",
-        cursor:"pointer"
-      }}>
-      ↑
+      type="button"
+      className="back-to-top glass-card"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Scroll back to top"
+    >
+      Top
     </button>
   );
 }

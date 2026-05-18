@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-export default function useReveal() {
+export default function useReveal(): void {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const elements = document.querySelectorAll(".reveal:not(.active)");
+    const elements = document.querySelectorAll<HTMLElement>(".reveal:not(.active)");
 
     if (reduceMotion) {
       elements.forEach((element) => element.classList.add("active"));
@@ -19,7 +19,7 @@ export default function useReveal() {
           }
         });
       },
-      { threshold: 0.16 }
+      { threshold: 0.2 }
     );
 
     elements.forEach((element) => observer.observe(element));
