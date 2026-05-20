@@ -20,19 +20,19 @@ export default function Navbar() {
   }, [theme]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-surface bg-surface/95 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-[1240px] items-center justify-between gap-4 px-4 py-3 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3 lg:px-8">
         <a href="#top" className="flex items-center gap-3" onClick={() => setMenuOpen(false)}>
-          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[var(--accent-soft)] text-sm font-semibold text-[var(--accent)] ring-1 ring-[var(--border)]">
+          <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-sm font-semibold text-white">
             UH
           </div>
-          <div className="hidden min-w-[120px] flex-col leading-none md:grid">
-            <span className="text-sm font-semibold text-[var(--text-primary)]">Umme Hani</span>
-            <span className="text-xs text-[var(--text-muted)]">Product engineer for growth-stage teams</span>
+          <div className="hidden flex-col leading-none md:grid">
+            <span className="text-sm font-semibold text-white">Umme Hani</span>
+            <span className="text-xs text-zinc-400">Frontend-focused Full Stack Developer</span>
           </div>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => {
             const id = item.toLowerCase();
             return (
@@ -40,7 +40,9 @@ export default function Navbar() {
                 key={item}
                 href={`#${id}`}
                 className={`text-sm font-medium transition ${
-                  activeSection === id ? "text-[var(--accent)]" : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
+                  activeSection === id
+                    ? "text-white border-b-2 border-violet-500 pb-0.5"
+                    : "text-zinc-400 hover:text-white"
                 }`}
                 aria-current={activeSection === id ? "page" : undefined}
               >
@@ -54,7 +56,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setTheme((current) => (current === "light" ? "dark" : "light"))}
-            className="rounded-full border border-surface bg-surface px-4 py-2 text-sm font-semibold text-[var(--text-primary)] transition hover:bg-surface-soft"
+            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-violet-400/40 hover:bg-white/10"
           >
             {theme === "light" ? "Dark" : "Light"}
           </button>
@@ -62,13 +64,13 @@ export default function Navbar() {
             href="https://www.linkedin.com/in/umme-hani-khanam"
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-surface bg-surface px-4 py-2 text-sm font-semibold text-[var(--text-primary)] transition hover:bg-surface-soft"
+            className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-violet-400/40 hover:bg-white/10"
           >
             LinkedIn
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-5 py-2 text-sm font-semibold text-white transition hover:opacity-95"
+            className="inline-flex items-center justify-center rounded-full border border-transparent bg-gradient-to-r from-violet-500 to-blue-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(99,102,241,0.24)] transition hover:shadow-[0_0_40px_rgba(99,102,241,0.30)]"
           >
             Hire Me
           </a>
@@ -76,7 +78,7 @@ export default function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-surface bg-surface text-[var(--text-primary)] transition md:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition md:hidden"
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -90,20 +92,25 @@ export default function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`overflow-hidden border-t border-surface bg-surface/95 transition-all duration-300 md:hidden ${menuOpen ? "max-h-[420px]" : "max-h-0"}`}
+        className={`overflow-hidden border-t border-white/10 bg-zinc-950/95 transition-all duration-300 md:hidden ${menuOpen ? "max-h-[calc(100vh-4.5rem)] overflow-y-auto" : "max-h-0"}`}
       >
-        <div className="mx-auto flex max-w-[1240px] flex-col gap-4 px-4 py-5">
-          <div className="grid gap-3">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-base font-medium text-[var(--text-secondary)] transition hover:text-[var(--text-primary)]"
-                onClick={() => setMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-5">
+          <div className="grid gap-4">
+            {navItems.map((item) => {
+              const id = item.toLowerCase();
+              return (
+                <a
+                  key={item}
+                  href={`#${id}`}
+                  className={`text-base font-medium transition w-full ${
+                    activeSection === id ? "text-white" : "text-zinc-400 hover:text-white"
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              );
+            })}
           </div>
           <div className="flex flex-col gap-3">
             <button
@@ -112,13 +119,13 @@ export default function Navbar() {
                 setTheme((current) => (current === "light" ? "dark" : "light"));
                 setMenuOpen(false);
               }}
-              className="rounded-full border border-surface bg-surface px-4 py-3 text-sm font-semibold text-[var(--text-primary)]"
+              className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold text-white"
             >
               {theme === "light" ? "Switch dark" : "Switch light"}
             </button>
             <a
               href="#contact"
-              className="rounded-full bg-[var(--accent)] px-4 py-3 text-center text-sm font-semibold text-white transition hover:opacity-95"
+              className="w-full rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-4 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setMenuOpen(false)}
             >
               Hire Me
@@ -127,7 +134,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/umme-hani-khanam"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-surface bg-surface px-4 py-3 text-center text-sm font-semibold text-[var(--text-primary)]"
+              className="w-full rounded-full border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setMenuOpen(false)}
             >
               LinkedIn

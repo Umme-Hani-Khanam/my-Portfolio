@@ -3,14 +3,25 @@ import useReveal from "../hooks/useReveal";
 
 const roles = [
   {
+    title: "AI Web Developer Intern",
+    period: "Internship",
+    company: "InAmigous Foundation",
+    mode: "Remote",
+    points: [
+      "Spearheaded the visual overhaul of the foundation’s web ecosystem to bridge AI integrations with intuitive product design.",
+      "Architected high-performance UI features and streamlined asset delivery using modern frontend workflows.",
+      "Elevated polish, responsiveness, and interaction clarity for a frictionless user experience.",
+    ],
+  },
+  {
     title: "AI Content Creation Department Manager Intern",
     period: "Jan 2026 - Feb 2026",
     company: "Hadi & Taimur",
     mode: "Remote",
     points: [
       "Built a React dashboard for prompt configuration, content staging, and approval workflows.",
-      "Implemented a data pipeline to centralize model outputs, reducing manual handoff velocity by 60%.",
-      "Added event-level logging and success metrics to improve editorial iteration around campaign performance.",
+      "Implemented a centralized data pipeline that reduced handoff velocity by 60%.",
+      "Added event-level logging and success metrics to improve editorial iteration.",
     ],
   },
   {
@@ -20,8 +31,8 @@ const roles = [
     mode: "Remote",
     points: [
       "Designed a reusable visual system for campaigns, social media, and fundraising assets.",
-      "Created templates and brand guidelines to speed up production with consistent typography and layout.",
-      "Partnered with engineering and content teams to align delivery cadence, accessibility, and launch readiness.",
+      "Created templates and brand guidelines to speed production with consistent typography.",
+      "Partnered with engineering and content teams to align delivery cadence and launch readiness.",
     ],
   },
 ];
@@ -33,13 +44,13 @@ export default function Experience() {
     <section id="experience" className="section reveal px-4 py-16 sm:px-6 sm:py-20">
       <div className="space-y-8">
         <div className="max-w-2xl space-y-3">
-          <p className="inline-flex rounded-full border border-(--border) bg-(--surface-soft) px-4 py-2 text-xs uppercase tracking-[0.28em] text-(--accent)">
+          <p className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.28em] text-violet-300">
             Experience
           </p>
-          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-(--text-primary) sm:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-[-0.04em] text-white sm:text-4xl">
             Engineering experience that combines product delivery with team collaboration.
           </h2>
-          <p className="max-w-xl text-base leading-7 text-(--text-secondary)">
+          <p className="max-w-xl text-base leading-7 text-zinc-400">
             My roles focus on building systems, managing workstreams, and delivering product improvements with technical accountability.
           </p>
         </div>
@@ -48,7 +59,7 @@ export default function Experience() {
           {roles.map((role) => (
             <motion.article
               key={role.title}
-              className="group flex min-h-80 flex-col justify-between overflow-hidden rounded-4xl border border-surface bg-surface p-6 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-(--accent) hover:bg-(--surface-soft)"
+              className="group flex min-h-[360px] flex-col justify-between overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-6 shadow-glow transition duration-300 hover:-translate-y-1 hover:border-violet-500/30 hover:bg-white/10"
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -56,20 +67,18 @@ export default function Experience() {
             >
               <div className="space-y-6">
                 <div className="flex items-start justify-between gap-4">
-                  <span className="rounded-full bg-(--surface-soft) px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-(--accent)">
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-violet-300">
                     {role.mode}
                   </span>
-                  <div className="text-right text-sm text-(--text-muted)">
-                    <p className="font-semibold text-(--text-primary)">{role.company}</p>
+                  <div className="text-right text-sm text-zinc-400">
+                    <p className="font-semibold text-white">{role.company}</p>
                     <p>{role.period}</p>
                   </div>
                 </div>
-                <h3 className="text-2xl font-semibold text-(--text-primary)">{role.title}</h3>
-                <ul className="grid gap-3 text-sm leading-7 text-(--text-secondary)">
+                <h3 className="text-2xl font-semibold text-white">{role.title}</h3>
+                <ul className="grid gap-3 text-sm leading-7 text-zinc-300">
                   {role.points.map((point) => (
-                    <li key={point} className="rounded-3xl bg-(--surface-strong) p-4">
-                      {point}
-                    </li>
+                    <li key={point} className="rounded-3xl bg-white/10 p-4">{point}</li>
                   ))}
                 </ul>
               </div>

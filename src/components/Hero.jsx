@@ -1,98 +1,120 @@
 import { motion } from "framer-motion";
 
-const navCopy = "Product Engineer / UI Engineer for real product teams";
+const heroHighlights = ["React", "Node.js", "Express.js", "Supabase", "PostgreSQL", "REST APIs", "Scalable systems"];
 const heroStats = [
-  { value: "3 launches", label: "React product releases" },
-  { value: "API-first", label: "Backend flows with strong contracts" },
-  { value: "Team-ready", label: "Component systems built for handoff" },
-];
-const heroFocus = [
-  "Operational dashboards, not landing page polish",
-  "Interfaces shaped around real workflows",
-  "Reusable UI for product teams and future work",
+  { value: "Production-ready", label: "React and backend systems" },
+  { value: "API-first", label: "Node.js, Express, Supabase" },
+  { value: "Delivery-grade", label: "Component systems and data flows" },
 ];
 
 export default function Hero() {
   return (
-    <section id="top" className="section reveal relative overflow-hidden rounded-[32px] border border-surface bg-surface px-6 py-12 sm:px-8 sm:py-14 shadow-soft">
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[120px] bg-[radial-gradient(circle_at_top,_rgba(233,166,216,0.18),_transparent_30%)]" />
-      <motion.div
-        className="mx-auto grid max-w-[1240px] gap-8 lg:grid-cols-[1.4fr_0.95fr]"
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.75, ease: "easeOut" }}
-      >
-        <div className="space-y-6">
-          <span className="inline-flex rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--accent)]">
-            {navCopy}
-          </span>
-
-          <div className="space-y-5">
-            <h1 className="max-w-2xl text-4xl font-semibold leading-tight text-[var(--text-primary)] sm:text-5xl lg:text-6xl">
-              I ship product interfaces and dashboards that teams can actually own.
-            </h1>
-            <p className="max-w-xl text-base leading-7 text-[var(--text-secondary)] sm:text-lg">
-              I work on React UI, API flow, and system design together so the interface feels intentional and the product stays maintainable.
-            </p>
+    <section id="top" className="section reveal relative overflow-hidden py-16 sm:py-20" aria-labelledby="hero-heading">
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(59,130,246,0.16),transparent_16%),radial-gradient(circle_at_88%_14%,rgba(124,58,237,0.18),transparent_18%)]" />
+      <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.45fr_0.95fr] px-6 lg:px-8">
+        <div className="space-y-8">
+          <div className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.32em] text-zinc-400">
+            Frontend-focused Full Stack Developer
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-            <a
-              href="#projects"
-              className="inline-flex items-center justify-center rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white transition hover:opacity-95"
+          <div className="space-y-6">
+            <motion.h1
+              id="hero-heading"
+              className="max-w-3xl text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl lg:text-7xl"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
             >
-              Review case studies
-            </a>
-            <a
-              href="https://drive.google.com/file/d/1B61_lTwKbuSd4SPQpkjiJdGOOioMx4aG/view?usp=sharing"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-[var(--border)] bg-surface px-6 py-3 text-sm font-semibold text-[var(--text-primary)] transition hover:bg-[var(--surface-soft)]"
+              Full Stack Developer building production-grade web applications.
+            </motion.h1>
+
+            <motion.p
+              className="max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
             >
-              Download CV
-            </a>
+              I build polished frontend experiences backed by solid backend architecture, scalable database models, and production deploy workflows.
+            </motion.p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
-            {heroFocus.map((item) => (
-              <span
-                key={item}
-                className="rounded-3xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-sm text-[var(--text-secondary)]"
-              >
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {heroHighlights.map((item) => (
+              <span key={item} className="rounded-3xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-zinc-300">
                 {item}
               </span>
             ))}
           </div>
+
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <motion.a
+              href="#projects"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-violet-400/40 hover:bg-white/15"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+              aria-label="View projects"
+            >
+              View projects
+            </motion.a>
+            <motion.a
+              href="https://drive.google.com/file/d/1B61_lTwKbuSd4SPQpkjiJdGOOioMx4aG/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-violet-400/40 hover:bg-white/10"
+              whileHover={{ y: -2 }}
+              aria-label="Download resume"
+            >
+              Resume
+            </motion.a>
+            <motion.a
+              href="https://github.com/Umme-Hani-Khanam"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-blue-400/40 hover:bg-white/10"
+              whileHover={{ y: -2 }}
+              aria-label="View GitHub"
+            >
+              GitHub
+            </motion.a>
+            <motion.a
+              href="mailto:khanamummehani100@gmail.com?subject=Hiring Inquiry"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-[0_0_40px_rgba(99,102,241,0.18)] transition hover:shadow-[0_0_50px_rgba(99,102,241,0.24)]"
+              whileHover={{ scale: 1.02 }}
+              aria-label="Email me"
+            >
+              Email me
+            </motion.a>
+          </div>
         </div>
 
         <motion.div
-          className="rounded-[28px] border border-[var(--border)] bg-[var(--surface-soft)] p-7 shadow-soft"
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="glass-card overflow-hidden rounded-[32px] border border-white/10 p-6 shadow-glow"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, ease: "easeOut" }}
         >
-          <div className="space-y-5">
-            <div>
-              <p className="text-sm uppercase tracking-[0.28em] text-[var(--text-muted)]">Delivery signals</p>
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          <div className="space-y-6">
+            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">Delivery signals</p>
+              <div className="mt-5 grid gap-4 sm:grid-cols-1">
                 {heroStats.map((stat) => (
-                  <div key={stat.label} className="rounded-3xl bg-[var(--surface)] p-4 sm:p-5">
-                    <p className="text-2xl font-semibold text-[var(--text-primary)]">{stat.value}</p>
-                    <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{stat.label}</p>
+                  <div key={stat.label} className="rounded-3xl bg-zinc-950/80 p-4">
+                    <p className="text-2xl font-semibold text-white">{stat.value}</p>
+                    <p className="mt-2 text-sm leading-6 text-zinc-400">{stat.label}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5">
-              <p className="text-sm uppercase tracking-[0.32em] text-[var(--text-muted)]">Why this feels different</p>
-              <p className="mt-3 text-base leading-7 text-[var(--text-secondary)]">
-                I’m building with the next iteration in mind — screens that are actually useful, contracts that can be extended, and interactions that feel purposeful.
+            <div className="rounded-[28px] border border-white/10 bg-white/5 p-6">
+              <p className="text-sm uppercase tracking-[0.3em] text-zinc-400">Why this feels different</p>
+              <p className="mt-4 text-base leading-7 text-zinc-300">
+                I build apps where frontend polish and backend reliability coexist: clean interfaces, strong contracts, and systems that scale.
               </p>
             </div>
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

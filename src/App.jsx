@@ -7,15 +7,15 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import ScrollProgress from "./components/ScrollProgress";
 import BackToTop from "./components/BackToTop";
+import AmbientGlints from "./components/AmbientGlints";
 
 export default function App() {
   return (
-    <div className="relative overflow-hidden bg-[#fbf5fa] text-[#2d1d3a]">
-      <div className="pointer-events-none absolute left-[-10%] top-0 h-[420px] w-[420px] rounded-full bg-gradient-to-br from-[#f7e2f1]/80 via-transparent to-transparent blur-3xl" />
-      <div className="pointer-events-none absolute right-0 top-20 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#d9c2e9]/70 via-transparent to-transparent blur-3xl" />
+    <div className="relative overflow-hidden bg-[#07070f] text-white">
+      <AmbientGlints />
       <ScrollProgress />
       <Navbar />
-      <main className="relative mx-auto flex min-h-screen max-w-[1440px] flex-col">
+      <main className="relative mx-auto flex min-h-screen max-w-7xl flex-col px-6 lg:px-8">
         <Hero />
         <About />
         <Skills />
