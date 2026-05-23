@@ -90,4 +90,20 @@
   .text-muted {
     color: var(--text-muted);
   }
+
+  #cursor-glow {
+    pointer-events: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 60;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 9999px;
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    transition: opacity 180ms ease;
+    mix-blend-mode: screen;
+    will-change: transform, opacity;
+  }
 }

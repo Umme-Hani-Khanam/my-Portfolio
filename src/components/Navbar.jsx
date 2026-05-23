@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import useActiveSection from "../hooks/useActiveSection";
 
 const navItems = ["About", "Skills", "Experience", "Projects", "Contact"];
@@ -35,18 +36,24 @@ export default function Navbar() {
         <div className="hidden items-center gap-6 md:flex">
           {navItems.map((item) => {
             const id = item.toLowerCase();
+            const active = activeSection === id;
             return (
               <a
                 key={item}
                 href={`#${id}`}
-                className={`text-sm font-medium transition ${
-                  activeSection === id
-                    ? "text-white border-b-2 border-violet-500 pb-0.5"
-                    : "text-zinc-400 hover:text-white"
+                className={`relative text-sm font-medium transition ${
+                  active ? "text-white" : "text-zinc-400 hover:text-white"
                 }`}
-                aria-current={activeSection === id ? "page" : undefined}
+                aria-current={active ? "page" : undefined}
               >
                 {item}
+                {active ? (
+                  <motion.span
+                    layoutId="nav-indicator"
+                    className="absolute inset-x-0 -bottom-1 mx-auto h-0.5 w-full rounded-full bg-violet-500"
+                    transition={{ type: "spring", stiffness: 280, damping: 22 }}
+                  />
+                ) : null}
               </a>
             );
           })}
@@ -70,7 +77,7 @@ export default function Navbar() {
           </a>
           <a
             href="#contact"
-            className="inline-flex items-center justify-center rounded-full border border-transparent bg-gradient-to-r from-violet-500 to-blue-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(99,102,241,0.24)] transition hover:shadow-[0_0_40px_rgba(99,102,241,0.30)]"
+            className="inline-flex items-center justify-center rounded-full border border-transparent bg-linear-to-r from-violet-500 to-blue-500 px-5 py-2 text-sm font-semibold text-white shadow-[0_0_24px_rgba(99,102,241,0.24)] transition hover:shadow-[0_0_40px_rgba(99,102,241,0.30)]"
           >
             Hire Me
           </a>
@@ -125,7 +132,7 @@ export default function Navbar() {
             </button>
             <a
               href="#contact"
-              className="w-full rounded-full bg-gradient-to-r from-violet-500 to-blue-500 px-4 py-3 text-center text-sm font-semibold text-white"
+              className="w-full rounded-full bg-linear-to-r from-violet-500 to-blue-500 px-4 py-3 text-center text-sm font-semibold text-white"
               onClick={() => setMenuOpen(false)}
             >
               Hire Me
