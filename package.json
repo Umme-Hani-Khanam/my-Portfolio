@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.42",
+    "lenis": "^1.1.13",
     "@tsparticles/engine": "^4.0.5",
     "@tsparticles/react": "^4.0.5",
     "@tsparticles/slim": "^4.0.5",
