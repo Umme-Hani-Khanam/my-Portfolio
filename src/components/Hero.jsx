@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { motion } from "framer-motion";
 
 const heroHighlights = ["React", "Node.js", "Express.js", "Supabase", "PostgreSQL", "REST APIs", "Scalable systems"];
