@@ -27,6 +27,27 @@ const projects = [
       "https://github.com/Umme-Hani-Khanam/home-renovation-frontend",
   },
   {
+    name: "Enactus MLNC",
+    platform: "Vercel",
+    summary:
+      "A modular React website optimized for clean content updates, strong visual hierarchy, and fast mobile performance.",
+    challenge:
+      "The chapter needed a modern web presence that loaded quickly and presented events clearly.",
+    solution:
+      "Built reusable page sections, optimized assets, and deployed a high-performance site with Vercel.",
+    impact:
+      "Raised event visibility, improved sponsor presentation, and reduced page load times.",
+    features: [
+      "Mobile-first responsive layout",
+      "Reusable sponsor content blocks",
+      "Fast-loading optimized pages",
+      "Clean visual hierarchy",
+    ],
+    stack: ["React", "Vercel", "Tailwind CSS"],
+    liveUrl: "https://enactus-mlnc-website.vercel.app",
+    githubUrl: "",
+  },
+  {
     name: "Todo Companion – AI Powered Task Manager",
     platform: "Vercel",
     summary:

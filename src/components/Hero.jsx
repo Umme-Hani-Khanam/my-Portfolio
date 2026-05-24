@@ -1,7 +1,5 @@
-import { useCallback, useMemo, useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 
 const heroHighlights = ["React", "Node.js", "Express.js", "Supabase", "PostgreSQL", "REST APIs", "Scalable systems"];
 const heroStats = [
@@ -50,37 +48,10 @@ function MagneticLink({ children, href, ...props }) {
 }
 
 export default function Hero() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
-
-  const particlesOptions = useMemo(
-    () => ({
-      fullScreen: { enable: false },
-      detectRetina: true,
-      fpsLimit: 55,
-      particles: {
-        number: { value: 26, density: { enable: true, area: 900 } },
-        color: { value: ["#7c3aed", "#60a5fa", "#a855f7"] },
-        opacity: { value: 0.16, random: { enable: true, minimumValue: 0.06 } },
-        size: { value: { min: 1.5, max: 3.5 } },
-        move: { enable: true, speed: 0.7, direction: "none", random: true, straight: false, outModes: "out" },
-        links: { enable: true, distance: 140, color: "#7c3aed", opacity: 0.08, width: 1 },
-      },
-      interactivity: { events: { onHover: { enable: false }, onClick: { enable: false } } },
-    }),
-    []
-  );
-
   return (
     <section id="top" className="section reveal relative overflow-hidden py-16 sm:py-20" aria-labelledby="hero-heading">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_16%_18%,rgba(59,130,246,0.12),transparent_16%),radial-gradient(circle_at_88%_14%,rgba(124,58,237,0.12),transparent_18%)]" />
-      <Particles
-        id="hero-particles"
-        init={particlesInit}
-        options={particlesOptions}
-        className="pointer-events-none absolute inset-0 -z-20"
-      />
+      <div className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(circle_at_16%_18%,rgba(59,130,246,0.14),transparent_16%),radial-gradient(circle_at_88%_14%,rgba(124,58,237,0.14),transparent_18%)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_25%_15%,rgba(124,58,237,0.12),transparent_20%),radial-gradient(circle_at_80%_24%,rgba(14,165,233,0.12),transparent_18%)]" />
       <motion.div
         className="pointer-events-none absolute inset-0 -z-10"
         initial={{ opacity: 0 }}

@@ -11,9 +11,6 @@
   },
   "dependencies": {
     "lenis": "^1.1.13",
-    "@tsparticles/engine": "^4.0.5",
-    "@tsparticles/react": "^4.0.5",
-    "@tsparticles/slim": "^4.0.5",
     "framer-motion": "^12.38.0",
     "gsap": "^3.15.0",
     "react": "^19.2.0",
