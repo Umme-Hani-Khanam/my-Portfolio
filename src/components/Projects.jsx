@@ -5,62 +5,46 @@ import CaseStudyModal from "./CaseStudyModal";
 
 const projects = [
   {
-    name: "HomeTracker",
+    name: "Home Renovation Tracker",
     platform: "Netlify",
     summary:
-      "HomeTracker centralizes project status, budget tracking, permit workflows, and AI-assisted estimates into one modern ops surface.",
-
+      "A built-for-purpose renovation tracker that centralizes budgets, milestones, and contractor coordination into a clean operational dashboard.",
     challenge:
-      "Renovation teams needed a single source of truth for status, costs, and contractor coordination.",
-
+      "Teams needed one reliable surface to track renovation progress, budget changes, and permit handoffs.",
     solution:
-      "Built a React dashboard, Node.js API gateway, and Supabase data model to connect workflows and reduce delays.",
-
+      "Delivered a polished React UI with real-time status updates, cost tracking, and built-in estimate workflows.",
     impact:
-      "Improved visibility, reduced coordination gaps, and shipped a deploy-ready product experience.",
-
+      "Improved project visibility, reduced coordination friction, and helped renovation teams move faster.",
     features: [
-      "Renovation milestones and permit tracking",
-      "Cross-team collaboration workflows",
-      "Smart estimate suggestions",
-      "Responsive dashboard UI",
+      "Budget and milestone tracking",
+      "Permit workflow visibility",
+      "Team collaboration notes",
+      "Responsive dashboard experience",
     ],
-
     stack: ["React", "Node.js", "Express", "Supabase"],
-
     liveUrl: "https://homerenovationtracker.netlify.app",
-
     githubUrl:
       "https://github.com/Umme-Hani-Khanam/home-renovation-frontend",
   },
-
   {
-    name: "Enactus MLNC",
+    name: "Todo Companion – AI Powered Task Manager",
     platform: "Vercel",
-
     summary:
-      "A modular React website optimized for clean content updates, strong visual hierarchy, and fast mobile performance.",
-
+      "An AI-enhanced productivity assistant built to help users organize tasks, prioritize work, and stay focused with smart suggestions.",
     challenge:
-      "The chapter needed a modern web presence that loaded quickly and presented events clearly.",
-
+      "Busy users needed a task manager that adapted to their workflow and surfaced the most important work.",
     solution:
-      "Built reusable page sections, optimized assets, and deployed a high-performance site with Vercel.",
-
+      "Created a responsive task management experience with AI-powered suggestions, smart priorities, and clean task views.",
     impact:
-      "Raised event visibility, improved sponsor presentation, and reduced page load times.",
-
+      "Enabled faster task planning and made daily work feel more organized and efficient.",
     features: [
-      "Mobile-first responsive layout",
-      "Reusable sponsor content blocks",
-      "Fast-loading optimized pages",
-      "Clean visual hierarchy",
+      "AI-generated task priorities",
+      "Smart due-date recommendations",
+      "Clean task organization",
+      "Mobile-friendly task views",
     ],
-
-    stack: ["React", "Vercel", "Tailwind CSS"],
-
-    liveUrl: "https://enactus-mlnc-website.vercel.app",
-
+    stack: ["React", "AI integrations", "Tailwind CSS"],
+    liveUrl: "https://todo-companion.vercel.app",
     githubUrl: "",
   },
 ];
@@ -93,152 +77,104 @@ export default function Projects() {
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid gap-10">
-          {projects.map((project, index) => (
-            <motion.article
-              key={project.name}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1,
-              }}
-              className="rounded-[36px] border border-white/10 bg-gradient-to-b from-white/[0.07] to-white/[0.03] p-8 shadow-2xl backdrop-blur-md transition duration-300 hover:border-violet-500/30"
-            >
-              <div className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr]">
-                {/* Left Content */}
+        <div className="mt-14 grid gap-8 xl:grid-cols-2">
+          {projects.length > 0 &&
+            projects.map((project, index) => (
+              <motion.article
+                key={`${project.name}-${index}`}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                className="group flex min-h-full flex-col justify-between rounded-[32px] border border-white/10 bg-slate-950/80 p-8 transition duration-300 hover:border-violet-400/30 hover:bg-slate-900/90"
+              >
                 <div className="space-y-8">
-                  {/* Top */}
-                  <div className="space-y-5">
+                  <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/10 px-4 py-2 text-xs uppercase tracking-[0.28em] text-violet-300">
                       <span className="h-2 w-2 rounded-full bg-violet-500" />
                       {project.platform}
                     </div>
-
-                    <div className="space-y-4">
-                      <h3 className="text-3xl font-semibold text-white sm:text-4xl">
-                        {project.name}
-                      </h3>
-
-                      <p className="max-w-3xl text-base leading-8 text-zinc-300">
-                        {project.summary}
-                      </p>
-                    </div>
+                    <p className="text-sm text-zinc-500">Premium case study layout</p>
                   </div>
 
-                  {/* Info Grid */}
-                  <div className="grid gap-5 md:grid-cols-3">
-                    <div className="rounded-3xl border border-white/10 bg-black/20 p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">
-                        Challenge
-                      </p>
-
-                      <p className="mt-4 text-sm leading-7 text-zinc-300">
-                        {project.challenge}
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-black/20 p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">
-                        Solution
-                      </p>
-
-                      <p className="mt-4 text-sm leading-7 text-zinc-300">
-                        {project.solution}
-                      </p>
-                    </div>
-
-                    <div className="rounded-3xl border border-white/10 bg-black/20 p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">
-                        Impact
-                      </p>
-
-                      <p className="mt-4 text-sm leading-7 text-zinc-300">
-                        {project.impact}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Features */}
-                  <div className="rounded-[30px] border border-white/10 bg-black/20 p-6">
-                    <p className="mb-5 text-sm uppercase tracking-[0.28em] text-zinc-500">
-                      Key Features
+                  <div className="space-y-4">
+                    <h3 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                      {project.name}
+                    </h3>
+                    <p className="max-w-3xl text-base leading-8 text-zinc-300">
+                      {project.summary}
                     </p>
+                  </div>
 
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      {project.features.map((feature) => (
-                        <div
-                          key={feature}
-                          className="rounded-2xl border border-white/5 bg-white/[0.03] px-5 py-4 text-sm leading-7 text-zinc-300"
-                        >
-                          {feature}
-                        </div>
-                      ))}
+                  <div className="grid gap-4 sm:grid-cols-3">
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Challenge</p>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300">{project.challenge}</p>
+                    </div>
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Solution</p>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300">{project.solution}</p>
+                    </div>
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-zinc-500">Impact</p>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300">{project.impact}</p>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-sm uppercase tracking-[0.24em] text-zinc-500">Key Features</p>
+                      <ul className="mt-4 space-y-3 text-sm leading-7 text-zinc-300">
+                        {project.features.map((feature, featureIndex) => (
+                          <li key={`feature-${featureIndex}`} className="rounded-2xl bg-slate-950/50 p-3">
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-3xl border border-white/10 bg-white/5 p-5">
+                      <p className="text-sm uppercase tracking-[0.24em] text-zinc-500">Tech Stack</p>
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {project.stack.map((item, stackIndex) => (
+                          <span
+                            key={`stack-${stackIndex}`}
+                            className="rounded-full border border-white/10 bg-slate-950/60 px-4 py-2 text-sm text-zinc-300"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Right Sidebar */}
-                <div className="flex flex-col justify-between gap-6">
-                  {/* Tech Stack */}
-                  <div className="rounded-[30px] border border-white/10 bg-black/20 p-6">
-                    <p className="mb-5 text-sm uppercase tracking-[0.28em] text-zinc-500">
-                      Tech Stack
-                    </p>
-
-                    <div className="flex flex-wrap gap-3">
-                      {project.stack.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-zinc-300"
-                        >
-                          {item}
-                        </span>
-                      ))}
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-violet-500 px-6 text-sm font-semibold text-white transition hover:bg-violet-500/90"
+                  >
+                    View Live Project
+                  </a>
+                  {project.githubUrl ? (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/10 bg-slate-950/80 px-6 text-sm font-semibold text-white transition hover:border-violet-400/30 hover:bg-slate-900/90"
+                    >
+                      View Source Code
+                    </a>
+                  ) : (
+                    <div className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-white/10 bg-slate-950/80 px-6 text-sm text-zinc-400">
+                      Private Repository
                     </div>
-                  </div>
-
-                  {/* Buttons */}
-                  <div className="rounded-[30px] border border-white/10 bg-black/20 p-6">
-                    <div className="grid gap-4">
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex h-14 items-center justify-center rounded-full bg-violet-500 px-6 text-sm font-semibold text-white transition hover:opacity-90"
-                      >
-                        View Live Project
-                      </a>
-
-                      {project.githubUrl ? (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] px-6 text-sm font-semibold text-white transition hover:bg-white/[0.08]"
-                        >
-                          View Source Code
-                        </a>
-                      ) : (
-                        <div className="inline-flex h-14 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] px-6 text-sm text-zinc-500">
-                          Private Repository
-                        </div>
-                      )}
-
-                      <button
-                        type="button"
-                        onClick={() => setOpenProject(project)}
-                        className="inline-flex h-14 items-center justify-center rounded-full bg-white px-6 text-sm font-semibold text-black transition hover:bg-zinc-200"
-                      >
-                        View Case Study
-                      </button>
-                    </div>
-                  </div>
+                  )}
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            ))}
         </div>
       </div>
 

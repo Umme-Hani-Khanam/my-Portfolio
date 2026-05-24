@@ -19,9 +19,7 @@ const roles = [
     company: "Hadi & Taimur",
     mode: "Remote",
     points: [
-      "Built a React dashboard for prompt configuration, content staging, and approval workflows.",
-      "Implemented a centralized data pipeline that reduced handoff velocity by 60%.",
-      "Added event-level logging and success metrics to improve editorial iteration.",
+      "Developed AI-powered content, viral short-form videos, and trend-driven creatives using tools like Higgsfield, Flow, v0, and other modern AI platforms. Researched emerging AI workflows and optimized engaging digital content for higher audience performance.",
     ],
   },
   {
